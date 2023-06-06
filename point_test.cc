@@ -10,7 +10,7 @@ int main()
     p.movePoint(5,5);  
     cout << p << endl; // (5,5)
 
-    Point p2(1,4);
+    Point p2(1,1);
     vector<double> v = p.generateVector(p2);
     cout << "(" << v[0] << "," << v[1] << ")" << endl; // (-4,-4)
 

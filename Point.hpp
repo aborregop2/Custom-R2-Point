@@ -1,5 +1,7 @@
 //Custom R2 Point Class by Adrián Borrego
 // 04-06-2023
+#ifndef POINT_HPP
+#define POINT_HPP
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -93,3 +95,5 @@ class Point {
         friend ostream& operator<<(ostream &os, Point &p);
 
 };
+
+#endif
