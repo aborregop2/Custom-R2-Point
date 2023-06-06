@@ -33,7 +33,7 @@ class Point {
 
         /* Pre: true
            Post: creates a copy point of p */
-        Point(Point &p);
+        Point(const Point &p);
 
         //.............
         //  Destroyer  
@@ -58,7 +58,7 @@ class Point {
         
         /* Pre: true
            Post: makes an assignment at implicit point of p */
-        void operator=(Point p);
+        void operator=(const Point p);
 
         //............
         //  Consultors
@@ -86,10 +86,10 @@ class Point {
 
         /* Pre: a point p is prepared at input channel
            Post: p now have x and y readed at input channel */
-        istream& operator>>(istream &is, Point &p);
+        friend istream& operator>>(istream &is, Point &p);
 
         /* Pre: true
            Post: now x and y are written at output channel */
-        ostream& operator<<(ostream &os, Point &p);
+        friend ostream& operator<<(ostream &os, Point &p);
 
 };

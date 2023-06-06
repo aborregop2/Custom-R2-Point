@@ -12,7 +12,7 @@ Point::Point(double x, double y)
     this->y = y;
 }
 
-Point::Point(Point &p)
+Point::Point(const Point &p)
 {
     this->x = p.x;
     this->y = p.y;
@@ -23,7 +23,7 @@ Point::~Point()
 
 }
 
-vector<double> Point::generateVector(Point p)
+vector<double> Point::generateVector(const Point p)
 {
     vector<double> v(2);
     v[0] = p.x - x;
@@ -40,7 +40,7 @@ void Point::movePoint(double x, double y)
     }
 }
 
-void Point::operator=(Point p) 
+void Point::operator=(const Point p) 
 {
     if (this != &p) {
         x = p.x;
@@ -90,20 +90,20 @@ bool Point::operator==(Point p) const
     return (x == p.x) and (y == p.y);
 }
 
-istream& Point::operator>>(istream &is, Point &p)
+istream& operator>>(istream &is, Point &p)
 {
     is >> p.x >> p.y;
     return is;
 }
 
-ostream& Point::operator<<(ostream &os, Point &p)
+ostream& operator<<(ostream &os, Point &p)
 {
     os << "(" << p.x << "," << p.y << ")";
     return os;
 }
 
 
-/* Auxiliar Function */
+/* Auxiliar Functions */
 
 double slope(vector<double> &vs)
 {
