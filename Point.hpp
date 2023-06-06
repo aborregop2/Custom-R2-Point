@@ -17,8 +17,7 @@ using namespace std;
 
 class Point {
     private:
-        double x;
-        double y;
+        float x, y;
     
     public:
         //...............
@@ -31,7 +30,7 @@ class Point {
 
         /* Pre: true
            Post: creates a point with x coordinate and y ordinate */
-        Point(double x, double y);
+        Point(float x, float y);
 
         /* Pre: true
            Post: creates a copy point of p */
@@ -52,11 +51,11 @@ class Point {
         /* Pre: true
            Post: returns a vector made by two coordenates with origin 
            at implicit point and extreme at p */
-        vector<double> generateVector(Point p);
+        vector<float> generateVector(Point p);
 
         /* Pre: true
            Post: changes coordenates at implicit point, moves it */
-        void movePoint(double x, double y);
+        void movePoint(float x, float y);
         
         /* Pre: true
            Post: makes an assignment at implicit point of p */

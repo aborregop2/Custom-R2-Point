@@ -1,12 +1,12 @@
 #include "Point.hpp"
-double slope(vector<double> &vs);
+float slope(vector<float> &vs);
 
 Point::Point() 
 {
 
 }
 
-Point::Point(double x, double y)
+Point::Point(float x, float y)
 {
     this->x = x;
     this->y = y;
@@ -23,16 +23,16 @@ Point::~Point()
 
 }
 
-vector<double> Point::generateVector(const Point p)
+vector<float> Point::generateVector(const Point p)
 {
-    vector<double> v(2);
+    vector<float> v(2);
     v[0] = p.x - x;
     v[1] = p.y - y;
 
     return v;
 }
 
-void Point::movePoint(double x, double y)
+void Point::movePoint(float x, float y)
 {
     if (this->x != x and this->y != y) {
         this->x = x;
@@ -63,11 +63,11 @@ bool Point::isAligned(const vector<Point> &vp)
     bool aligned = false;
     if (vp.size() > 1) {
         aligned = true;
-        double snow;
-        double sinitial = slope(this->generateVector(vp[0]));
+        float snow;
+        float sinitial = slope(this->generateVector(vp[0]));
 
         if (sinitial < 0) {
-            sinitial *= -1.0;
+            sinitial *= -1;
         }
 
         for (unsigned int i = 1; i < vp.size() and aligned; i++) {
@@ -105,7 +105,7 @@ ostream& operator<<(ostream &os, Point &p)
 
 /* Auxiliar Functions */
 
-double slope(vector<double> &vs)
+float slope(vector<float> &vs)
 {
-    return double(vs[1]/vs[0]);
+    return vs[1]/vs[0];
 }
