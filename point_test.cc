@@ -7,11 +7,13 @@ int main()
     Point p(1,2);
     cout << p << endl; // (1,2)
 
-    p.movePoint(5,5);  
-    cout << p << endl; // (5,5)
+    cout << p.getx() << " " << p.gety() << endl;   // 1 2
+
+    p.movePoint(5.3,1.2);  
+    cout << p << endl; // (5.3,1.2)
 
     Point p2(1,1);
-    vector<double> v = p.generateVector(p2);
+    vector<float> v = p.generateVector(p2);
     cout << "(" << v[0] << "," << v[1] << ")" << endl; // (-4,-4)
 
     Point a(1,1);

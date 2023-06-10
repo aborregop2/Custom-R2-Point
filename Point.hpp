@@ -36,6 +36,7 @@ class Point {
            Post: creates a copy point of p */
         Point(const Point &p);
 
+
         //.............
         //  Destroyer  
         //.............
@@ -44,6 +45,7 @@ class Point {
            in sort of an area of ​​visibility */
         ~Point();
 
+
         //...........
         //  Modifiers
         //...........
@@ -51,7 +53,7 @@ class Point {
         /* Pre: true
            Post: returns a vector made by two coordenates with origin 
            at implicit point and extreme at p */
-        vector<float> generateVector(Point p);
+        vector<float> generateVector(const Point p);
 
         /* Pre: true
            Post: changes coordenates at implicit point, moves it */
@@ -60,6 +62,7 @@ class Point {
         /* Pre: true
            Post: makes an assignment at implicit point of p */
         void operator=(const Point p);
+
 
         //............
         //  Consultors
@@ -77,9 +80,14 @@ class Point {
            Post: returns if the implicit point is aligned with other point/s */
         bool isAligned(const vector<Point> &vp);
 
+        /*
+        */
+        float distance(const Point &p); 
+
         /* Pre: true
            Post: returns if the implicit point is equal to p */
         bool operator==(Point p) const;
+
 
         //.......
         //  L/E

@@ -64,25 +64,22 @@ bool Point::isAligned(const vector<Point> &vp)
     if (vp.size() > 1) {
         aligned = true;
         float snow;
-        float sinitial = slope(this->generateVector(vp[0]));
-
-        if (sinitial < 0) {
-            sinitial *= -1;
-        }
+        float sinitial = abs(slope(this->generateVector(vp[0])));
 
         for (unsigned int i = 1; i < vp.size() and aligned; i++) {
-            if (sinitial != snow) {
+            if (sinitial != abs(slope(this->generateVector(vp[i])))) {
                 aligned = false;
-            }
-
-            snow = slope(this->generateVector(vp[i]));
-            if (snow < 0) {
-                snow *= -1.0;
             }
         }
     }
 
     return aligned;
+}
+
+float Point::distance(const Point &p) {
+    vector<float> r = this->generateVector(p);
+
+    return sqrt(pow(r[0], 2) + pow(r[1], 2));
 }
 
 bool Point::operator==(Point p) const 
