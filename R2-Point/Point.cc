@@ -23,6 +23,20 @@ Point::~Point()
 
 }
 
+void Point::modifyx(float &x) 
+{
+    if(this->x != x) {
+        this->x = x;
+    }
+}
+
+void Point::modifyy(float &y) 
+{
+    if(this->y != y) {
+        this->y = y;
+    }
+}
+
 vector<float> Point::generateVector(const Point p)
 {
     vector<float> v(2);
@@ -48,6 +62,12 @@ void Point::operator=(const Point p)
     }
 }
 
+Point Point::operator+(const Vector &v)
+{
+    Point q(x + v.getx(), y + v.gety());
+
+    return q;
+}
 double Point::getx() const
 {
     return x;
