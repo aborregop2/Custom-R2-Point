@@ -80,8 +80,8 @@ class Point {
            Post: returns if the implicit point is aligned with other point/s */
         bool isAligned(const vector<Point> &vp);
 
-        /*
-        */
+        /* Pre: true
+           Post: returns the distance from implicit point to p*/
         float distance(const Point &p); 
 
         /* Pre: true
