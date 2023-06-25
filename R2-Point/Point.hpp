@@ -108,11 +108,11 @@ class Point {
 
       /* Pre: a point p is prepared at input channel
          Post: p now have x and y readed at input channel */
-      istream& operator>>(istream &is, Point &p);
+      friend istream& operator>>(istream &is, Point &p);
 
       /* Pre: true
          Post: now x and y are written at output channel */
-      ostream& operator<<(ostream &os, Point &p);
+      friend ostream& operator<<(ostream &os, Point &p);
 
 };
 

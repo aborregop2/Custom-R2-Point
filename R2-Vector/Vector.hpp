@@ -71,28 +71,28 @@ class Vector {
         //  Consultors  
         //.............
 
-        float getx();
+        float getx() const;
 
-        float gety();
+        float gety() const;
 
-        float slope();
+        float slope() const;
 
-        bool isProportional(const Vector &v);
+        bool isProportional(Vector &v) const;
 
-        float magnitude();
+        float magnitude() const;
 
-        float scalarProd(const Vector &v);
+        float scalarProd( Vector &v) const;
 
-        float degree_respect(const Vector &v);
+        float degree_respect(Vector &v) const;
 
 
         //........
         //  L/E  
         //........
 
-        istream& operator>>(istream &is, Vector &v);
+        friend istream& operator>>(istream &is, Vector &v);
 
-        ostream& operator<<(ostream &os, Vector &v);
+        friend ostream& operator<<(ostream &os, Vector &v);
 
 };
 
