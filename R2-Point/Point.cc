@@ -37,11 +37,9 @@ void Point::modifyy(float &y)
     }
 }
 
-vector<float> Point::generateVector(const Point p)
+Vector Point::generateVector(const Point p)
 {
-    vector<float> v(2);
-    v[0] = p.x - x;
-    v[1] = p.y - y;
+    Vector v(*this, p);
 
     return v;
 }
@@ -78,16 +76,20 @@ double Point::gety() const
     return y;
 }
 
-bool Point::isAligned(const vector<Point> &vp)
+bool Point::isAligned(vector<Point> &vp)
 {   
     bool aligned = false;
     if (vp.size() > 1) {
         aligned = true;
-        float snow;
-        float sinitial = abs(slope(this->generateVector(vp[0])));
+
+        Vector v(*this, vp[0]);
+        float sinitial = v.slope();
 
         for (unsigned int i = 1; i < vp.size() and aligned; i++) {
-            if (sinitial != abs(slope(this->generateVector(vp[i])))) {
+
+            Vector v(*this, vp[i]);
+            
+            if (sinitial != v.slope()) {
                 aligned = false;
             }
         }
@@ -97,9 +99,9 @@ bool Point::isAligned(const vector<Point> &vp)
 }
 
 float Point::distance(const Point &p) {
-    vector<float> r = this->generateVector(p);
+    Vector v(*this, p);
 
-    return sqrt(pow(r[0], 2) + pow(r[1], 2));
+    return v.magnitude();
 }
 
 bool Point::operator==(Point p) const 

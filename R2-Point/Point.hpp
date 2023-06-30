@@ -60,9 +60,9 @@ class Point {
       void modifyy(float &y);
 
       /* Pre: true
-         Post: returns a vector made by two coordenates with origin 
+         Post: returns a Vector made by two coordenates with origin 
          at implicit point and extreme at p */
-      vector<float> generateVector(const Point p);
+      Vector generateVector(const Point p);
 
       /* Pre: true
          Post: changes coordenates at implicit point, moves it */
@@ -91,7 +91,7 @@ class Point {
 
       /* Pre: vp.size() > 1
          Post: returns if the implicit point is aligned with other point/s */
-      bool isAligned(const vector<Point> &vp);
+      bool isAligned(vector<Point> &vp);
 
       /* Pre: true
          Post: returns the distance from implicit point to p*/
@@ -106,7 +106,7 @@ class Point {
       //  L/E
       //.......
 
-      /* Pre: a point p is prepared at input channel
+      /* Pre: a Point p is prepared at input channel
          Post: p now have x and y readed at input channel */
       friend istream& operator>>(istream &is, Point &p);
 

@@ -113,7 +113,7 @@ float Vector::gety() const
 
 float Vector::slope() const
 {
-    return y/x;
+    return abs(y/x);
 }
 
 bool Vector::isProportional(Vector &v) const
@@ -134,7 +134,6 @@ float Vector::scalarProd(Vector &v) const
 {
     return x*v.x + y*v.y;
 }
-
 
 float Vector::degree_respect(Vector &v) const
 {
